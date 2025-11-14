@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎨 Math Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+
+    <!-- Score -->
+    <header>
+      <div id="score-container">Score: <span id="score">0</span></div>
+    </header>
+
+    <!-- Decorative shapes -->
+    <div class="decor-shape shape1"></div>
+    <div class="decor-shape shape2"></div>
+    <div class="decor-shape shape3"></div>
+
+    <!-- Question circle with timer ring -->
+    <div id="question-circle-container">
+      <svg id="timer-ring" width="200" height="200">
+        <circle r="90" cx="100" cy="100" stroke="#ddd" stroke-width="10" fill="transparent"/>
+        <circle id="timer-progress" r="90" cx="100" cy="100" stroke="#2ecc71" stroke-width="10" fill="transparent"
+          stroke-dasharray="565.48" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+      </svg>
+      <div id="question-circle">
+        <p id="question">5 + 3</p>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div id="input-container">
+      <input type="number" id="input" placeholder="Your Answer">
+      <button id="submit-button" onclick="checkAnswer()">Submit</button>
+    </div>
+
+    <!-- Result text -->
+    <p id="result"></p>
+
+    <!-- Game Over -->
+    <div id="game-over-screen" class="hidden">
+      <h2>Game Over!</h2>
+      <p>Your Final Score: <span id="final-score">0</span></p>
+      <button id="restart-button" onclick="startGame()">Play Again</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

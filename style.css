@@ -1,0 +1,187 @@
+/* Body & background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Main container */
+.game-container {
+  text-align: center;
+  position: relative;
+}
+
+/* Score */
+#score-container {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Question circle & timer */
+#question-circle-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 30px;
+}
+
+#question-circle {
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.5s ease, background 0.5s ease;
+  box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+#question-circle.glow {
+  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+  background: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
+}
+
+#question-circle p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Input & buttons */
+#input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#input {
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 100px;
+  margin-right: 10px;
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #ff6b6b;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Result text with visible background */
+#result {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  min-height: 24px;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Timer ring */
+#timer-ring {
+  transform: rotate(-90deg);
+  transition: stroke 0.5s;
+}
+
+#timer-progress.green { stroke: #2ecc71; }
+#timer-progress.orange { stroke: #f1c40f; }
+#timer-progress.red { stroke: #e74c3c; }
+
+/* Confetti */
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: confetti-fall 1s forwards;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(200px) rotate(360deg); opacity: 0; }
+}
+
+/* Score pop */
+.score-pop {
+  animation: pop 0.3s ease;
+}
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+
+/* Game over screen */
+#game-over-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 15px;
+  display: none;
+  text-align: center;
+}
+
+/* Decorative shapes */
+.decor-shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  z-index: 0;
+  animation: floatShape 6s infinite ease-in-out alternate;
+}
+
+.shape1 {
+  width: 40px; height: 40px;
+  background: #ff6b6b;
+  top: 20%; left: 15%;
+}
+
+.shape2 {
+  width: 60px; height: 60px;
+  background: #f1c40f;
+  top: 60%; left: 70%;
+}
+
+.shape3 {
+  width: 30px; height: 30px;
+  background: #2ecc71;
+  top: 40%; left: 50%;
+}
+
+@keyframes floatShape {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
